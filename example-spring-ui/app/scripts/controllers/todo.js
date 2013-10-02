@@ -12,12 +12,18 @@ angular.module('ExampleSpringApp').controller('TodoCtrl', [ '$scope', 'Todos', f
   $scope.done = function(index) {
 	  var doneTodoId = $scope.todos[index].entityId;
 	  var todo = Todos.done({todoId: doneTodoId});
-	  $scope.todos.splice(index, 1);
+	  $scope.updateContacts();
   };
 
   $scope.remove = function(index) {
 	  var todoIdToRemove = $scope.todos[index].entityId;
 	  Todos.remove({todoId : todoIdToRemove});
 	  $scope.todos.splice(index, 1);
+  };
+  
+  $scope.updateContacts = function () {
+	  Todos.query( function( data ) {
+		  $scope.todos = data;
+	  });
   };
 } ]);
