@@ -14,7 +14,7 @@ angular.module('ExampleSpringApp').controller('TodoCtrl', [ '$scope', 'Todos', f
 
   $scope.done = function(index) {
 	  var doneTodoId = $scope.todos[index].entityId;
-	  var todo = Todos.done({id: doneTodoId});
+	  var todo = Todos.done({todoId: doneTodoId});
 	  $scope.todos.splice(index, 1);
   };
 

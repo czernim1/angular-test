@@ -12,7 +12,7 @@
 
 angular.module('ExampleSpringApp').factory('Todos', function($resource) {
 	  return $resource('/api/todos/:action/:todoId/:title', {
-	    todoId : '@id', title : '@title', action : '@action'}, {
+	    todoId : '@todoId', title : '@title', action : '@action'}, {
 	    done : {
 	      method : 'PUT',
 	      params : {action : 'done'},
