@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ExampleSpringApp', ['ngResource'])
+angular.module('ExampleSpringApp', ['ngResource', 'todoFilters'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
