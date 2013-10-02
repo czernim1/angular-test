@@ -38,3 +38,11 @@ The best of the beast tools for testing: TestNG, Mockito and FestAssert are the 
 * MySql as a default database, but in memory H2 for integration tests. 
 * Hexagonal architecture
 * And last but not least: old good Maven. I will migrate project to Gradle eventually ...
+
+# Application setup
+* install grunt in example-spring-ui directory (npm install -g grunt-cli)
+* install project dependencies defined in package.json file (npm install)
+* mvn -Dwtpversion=1.5 eclipse:eclipse in example-spring-core
+
+* mvn tomcat7:run (in example-spring-core directory)
+* grunt start in example-spring-ui directory

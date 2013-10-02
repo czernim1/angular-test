@@ -53,7 +53,7 @@ public class TodoController {
 		todoService.updateTitle(id, title);
 	}
 
-	@RequestMapping(value = "/{id}/done", method = RequestMethod.PUT)
+	@RequestMapping(value = "/done/{id}", method = RequestMethod.PUT)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void done(@PathVariable("id") Long id) {
 		todoService.done(id);

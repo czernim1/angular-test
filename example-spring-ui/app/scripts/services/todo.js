@@ -11,15 +11,15 @@
 //} ]);
 
 angular.module('ExampleSpringApp').factory('Todos', function($resource) {
-	  return $resource('/api/todos/:todoId/:title', {
-	    todoId : '@id', title : '@title'}, {
+	  return $resource('/api/todos/:action/:todoId/:title', {
+	    todoId : '@id', title : '@title', action : '@action'}, {
 	    done : {
 	      method : 'PUT',
+	      params : {action : 'done'},
 	      isArray : false
 	    },
 	    add : {
 	    	method : 'POST',
-	    	params : {title: 'todo'},
 	    	isArray : false
 	    }
 	  });
