@@ -17,10 +17,6 @@ angular.module('ExampleSpringApp').factory('Todos', function($resource) {
 	      method : 'PUT',
 	      params : {action : 'done'},
 	      isArray : false
-	    },
-	    add : {
-	    	method : 'POST',
-	    	isArray : false
 	    }
 	  });
 	});

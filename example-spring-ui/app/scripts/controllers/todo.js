@@ -4,9 +4,6 @@ angular.module('ExampleSpringApp').controller('TodoCtrl', [ '$scope', 'Todos', f
   $scope.todos = Todos.query();
 
   $scope.addTodo = function() {
-//	  var todo = Todos.get({todoId:1}, function(){
-//		  alert(todo.title);
-//	  });
 	  Todos.save({title: $scope.todo});
 	  $scope.todos.push({title: $scope.todo});
 	  $scope.todo = '';
