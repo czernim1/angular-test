@@ -7,6 +7,10 @@ angular.module('ExampleSpringApp').factory('Todos', function($resource) {
 	      method : 'PUT',
 	      params : {action : 'done'},
 	      isArray : false
+	    },
+	    update : {
+	    	method : 'PUT',
+	    	isArray : false
 	    }
 	  });
 	});
