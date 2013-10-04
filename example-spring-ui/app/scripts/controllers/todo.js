@@ -4,23 +4,28 @@ angular.module('ExampleSpringApp').controller('TodoCtrl', [ '$scope', 'Todos', f
   $scope.todos = Todos.query();
 
   $scope.addTodo = function() {
-	  Todos.save({title: $scope.todo});
-	  $scope.updateContacts();
+	  Todos.save({title: $scope.todo}, function(){
+		  $scope.updateContacts();
+	  });
 	  $scope.todo = '';
   };
 
   $scope.done = function(doneTodoId) {
-	  var todo = Todos.done({todoId: doneTodoId});
-	  $scope.updateContacts();
+	  var todo = Todos.done({todoId: doneTodoId}, function(){
+		  $scope.updateContacts();
+	  });
   };
 
   $scope.remove = function(entityId) {
-	  Todos.remove({todoId : entityId});
-	  $scope.updateContacts();
+	  Todos.remove({todoId : entityId}, function(){
+		  $scope.updateContacts();
+	  });
   };
   
   $scope.changeTitle = function(todo) {
-	  Todos.update({todoId : todo.entityId, title : todo.title});
+	  Todos.update({todoId : todo.entityId, title : todo.title}, function(){
+		  $scope.updateContacts();
+	  });
   };
   
   $scope.updateContacts = function () {
